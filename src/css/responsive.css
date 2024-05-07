@@ -21,7 +21,7 @@
         grid-template-rows: 1fr 1fr;
         grid-template-areas: "general"
         "spendings";
-        height: 44vh;
+        height: 50vh;
     }
 
     .grid-container-bottom{
