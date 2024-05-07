@@ -1,0 +1,89 @@
+.general-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "select-year select-month"
+    "beggining-balance entries"
+    "exits ending";
+    border-right: 1px solid #f8c300;
+    border-bottom: 1px solid #f8c300;
+
+}
+
+.select-year{
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+  
+}
+
+.select-year select{
+  width: 100px;
+  border-radius: 10px;
+  color: #fff;
+  background: none; 
+  font-size: 2vw;
+}
+
+.select-year option{
+  color: #fff;
+  background-color: black;
+  border: 1px #fff solid;
+}
+  
+.entries .number{
+  color: #24AF5C;
+}
+
+.exits .number{
+  color: red;
+}
+
+.select-month{
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+  
+}
+
+.select-month select{
+  border-radius: 10px;
+  color: #fff;
+  background: none; 
+  font-size: 2vw;
+}
+
+.select-month option{
+  color: #fff;
+  background-color: black;
+  border: 1px #fff solid;
+}
+
+.resume {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  transition: 0.1s;
+  cursor: default;
+  color: #ffffff;
+}
+
+.resume:hover{
+  transition: 0.1s;
+  transform: scale(1.1);
+}
+
+.description{
+  font-size: 1vw;
+}
+
+.number{
+  font-size: 2vw;
+}

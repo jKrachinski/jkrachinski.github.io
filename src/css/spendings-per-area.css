@@ -1,0 +1,81 @@
+.spendings-per-area{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 9fr;
+    grid-template-areas: "title"
+    "grid";
+    border-left: 1px solid #f8c300;
+    border-top:  1px solid #f8c300;
+    color: #fff;
+}
+
+.grid-container-spendings-per-area{
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "areas spendings-per-area-graph";
+}
+
+.spendings-per-area-graph{
+    display: flex;
+    align-items: center;
+    margin: auto;
+    justify-content: center;
+}
+
+.total-cost-per-area{
+    display: flex;
+    align-items: center;
+    margin: auto;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    transition: 0.1s;
+    cursor: default;
+    border: 3px solid #f8c300;
+    border-radius: 10px;
+    margin:5px;
+}
+
+.title-per-area{
+    display: flex;
+    align-items: center;
+    margin: auto;
+    justify-content: center;
+    
+}
+
+.areas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.areas .button-areas{
+    padding: 0px;
+    width: 9vw;
+    height: 3.5vh;
+    font-size: 1vw;
+    margin: 3vh;
+    color: #ffffff;
+    background: none;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.areas .button-areas:hover{
+    transform: scale(1.1);
+    transition: 0.2s;
+}
+
+.spendings-per-area-graph{
+    color: black;
+    margin-bottom: 0px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    box-shadow: 0px 6px 7px -4px rgb(0, 0, 0, 0.2);
+}

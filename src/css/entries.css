@@ -1,0 +1,32 @@
+.gains{
+    border-top: 1px solid #f8c300;
+    border-right: 1px solid #f8c300;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 9fr;
+    grid-template-areas: "title"
+    "gains-graph";
+}
+
+
+
+.gains p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    color: #fff;
+}
+
+.gains-graph{
+    background-color: none;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    justify-content: center;
+    color: black;
+    margin-bottom: 0px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    box-shadow: 0px 6px 7px -4px rgb(0, 0, 0, 0.2);
+}

@@ -1,0 +1,119 @@
+@media(max-width: 1000px) {
+    .header{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 10px;
+        border-bottom: 2px solid #f8c300;
+    }
+    
+    body{
+        font-family: "Open Sans", sans-serif;
+        background-color: #212121;
+        margin: 0 auto;
+        height: 100%;
+    }
+    
+    .grid-container-top{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "general"
+        "spendings";
+        height: 44vh;
+    }
+
+    .grid-container-bottom{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr 3fr;
+        grid-template-areas: "gains"
+        "spendings-per-area";
+        height: 44vh;
+    }
+
+    .gains{
+        border-top: 0px solid #f8c300;
+        border-right: 0px solid #f8c300;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 9fr;
+        grid-template-areas: "title"
+        "gains-graph";
+    }
+
+    .general-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: "select-year select-month"
+        "beggining-balance entries"
+        "exits ending";
+        border-right: 0px solid #f8c300;
+        border-bottom: 0px solid #f8c300;
+    
+    }
+
+    .spendings-per-area{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 9fr;
+        grid-template-areas: "title"
+        "grid";
+        border-left: 0px solid #f8c300;
+        border-top:  0px solid #f8c300;
+        color: #fff;
+    }
+
+    .spendings{
+        border-left: 0px solid #f8c300;
+        border-bottom: 0px solid #f8c300;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "general-spendings-graph";
+    }
+    
+    .description{
+        font-size: 2vw;
+    }
+      
+    .number{
+        font-size: 3vw;
+    }
+
+    .grid-container-spendings-per-area{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 8fr 2fr;
+        grid-template-areas: "areas" 
+        "spendings-per-area-graph";
+        height: 330px
+    }
+
+    .areas{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "areas-projects areas-zeladoria"
+        "areas-contracts areas-adm";
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+
+    .areas .button-areas{
+        padding: 0px;
+        width: 15vw;
+        height: 5vh;
+        font-size: 2vw;
+        margin: 5px;
+        color: #ffffff;
+        background: none;
+        border: 2px solid #ffffff;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+}

@@ -1,0 +1,54 @@
+html{
+    color: #fff;
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: "Open Sans", sans-serif;
+    background-color: #212121;
+    margin: 0 auto;
+    padding-top: 10px;
+    height: 100%;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+    border-bottom: 2px solid #f8c300;
+}
+
+.logo img{
+    height: 7vh;
+    width: 49.42vh;
+}
+
+.header h1{
+    border: 2px solid #f8c300;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 24px;
+}
+
+.grid-container-top{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "general spendings";
+    height: 44vh;
+}
+
+
+.general-resume{
+    background-color: beige;
+}
+
+.grid-container-bottom{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "spendings-per-area";
+    height: 44vh;
+}
+
