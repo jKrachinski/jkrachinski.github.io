@@ -252,7 +252,7 @@ var options_spending = {
   },
   responsive: [
     {
-      breakpoint: 1280,
+      breakpoint: 1400,
       options: {
         chart: {
           width: '400px'
