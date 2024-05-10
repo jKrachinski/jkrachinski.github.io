@@ -341,7 +341,7 @@ var options_spending = {
         breakpoint: 1280,
         options: {
           chart: {
-            width: '300px'
+            width: '400px'
           }
         }
       }
