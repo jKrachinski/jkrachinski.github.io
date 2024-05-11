@@ -1,14 +1,6 @@
-import julho2023 from '../database/2023Julho.json' with {type: "json"};
-import agosto2023 from '../database/2023Agosto.json' with {type: "json"};
-import setembro2023 from '../database/2023Setembro.json' with {type: "json"};
-import outubro2023 from '../database/2023Outubro.json' with {type: "json"};
-import novembro2023 from '../database/2023Novembro.json' with {type: "json"};
-import dezembro2023 from '../database/2023Dezembro.json' with {type: "json"};
-import janeiro2024 from '../database/2024Janeiro.json' with {type: "json"};
-import fevereiro2024 from '../database/2024Fevereiro.json' with {type: "json"};
-import marco2023 from '../database/2024Março.json' with {type: "json"};
+import database from '../database/database.json' with {type: "json"};
 
-var dados = janeiro2024
+var dados = database['2024']['Janeiro']
 var selectMonth = document.getElementById("select-month")
 var selectYear = document.getElementById("select-year")
 var area = 'projetos'
@@ -19,32 +11,11 @@ var saldofinal = document.getElementById("saldo-final")
 var entradastotal = document.getElementById("entradas-total")
 var saidastotal = document.getElementById("saidas-total")
 
+//whenever the user changes the listed year, changes the data to represent the first month of that year
 selectYear.addEventListener('change', () => {
-  if (selectYear.options[selectYear.selectedIndex].text == '2024') {
-    console.log("primeiro teste")
-    if (selectMonth.options[selectMonth.selectedIndex].text == 'Janeiro') {
-      dados = janeiro2024;
-    } else if (selectMonth.options[selectMonth.selectedIndex].text == 'Fevereiro') {
-      dados = fevereiro2024;
-    } else if (selectMonth.options[selectMonth.selectedIndex].text == 'Março') {
-      dados = marco2023;
-    }
-  } else if (selectYear.options[selectYear.selectedIndex].text == '2023') {
-    if (selectMonth.options[selectMonth.selectedIndex].text == 'Julho') {
-      dados = julho2023;
-    } else if (selectMonth.options[selectMonth.selectedIndex].text == 'Agosto') {
-      dados = agosto2023;
-    } else if (selectMonth.options[selectMonth.selectedIndex].text == 'Setembro') {
-      dados = setembro2023;
-    } else if (selectMonth.options[selectMonth.selectedIndex].text == 'Outubro') {
-      dados = outubro2023;
-    } else if (selectMonth.options[selectMonth.selectedIndex].text == 'Novembro') {
-      dados = novembro2023;
-    } else if (selectMonth.options[selectMonth.selectedIndex].text == 'Dezembro') {
-      dados = dezembro2023;
-    }
-  }
+  dados = database[selectYear.options[selectYear.selectedIndex].text][selectMonth.options[selectMonth.selectedIndex].text];
 
+  //0 defines the first year
   options_spending['series'][0]['data'] = dados['gastos gerais']
   options_spending['xaxis']['categories'] = dados['categorias gerais']
   options_area['series'][0]['data'] = dados[cost_area]
@@ -62,37 +33,16 @@ selectYear.addEventListener('change', () => {
   chart.updateOptions(options_spending)
 })
 
+//same thing as the year, but now whenever the month changes
 selectMonth.addEventListener('change', () => {
-  if (selectYear.options[selectYear.selectedIndex].text == '2024') {
-    console.log("primeiro teste")
-    if (selectMonth.options[selectMonth.selectedIndex].text == 'Janeiro') {
-      dados = janeiro2024;
-    } else if (selectMonth.options[selectMonth.selectedIndex].text == 'Fevereiro') {
-      dados = fevereiro2024;
-    } else if (selectMonth.options[selectMonth.selectedIndex].text == 'Março') {
-      dados = marco2023;
-    }
-  } else if (selectYear.options[selectYear.selectedIndex].text == '2023') {
-    if (selectMonth.options[selectMonth.selectedIndex].text == 'Julho') {
-      dados = julho2023;
-    } else if (selectMonth.options[selectMonth.selectedIndex].text == 'Agosto') {
-      dados = agosto2023;
-    } else if (selectMonth.options[selectMonth.selectedIndex].text == 'Setembro') {
-      dados = setembro2023;
-    } else if (selectMonth.options[selectMonth.selectedIndex].text == 'Outubro') {
-      dados = outubro2023;
-    } else if (selectMonth.options[selectMonth.selectedIndex].text == 'Novembro') {
-      dados = novembro2023;
-    } else if (selectMonth.options[selectMonth.selectedIndex].text == 'Dezembro') {
-      dados = dezembro2023;
-    }
-  }
+  dados = database[selectYear.options[selectYear.selectedIndex].text][selectMonth.options[selectMonth.selectedIndex].text];
+
+  //changes project text rotation based on the length of the project
   if (dados['projetos'].length > 10) {
     options_area['xaxis']['labels']['rotate'] = -40;
   } else {
     options_area['xaxis']['labels']['rotate'] = -30;
   }
-    
 
   options_spending['series'][0]['data'] = dados['gastos gerais']
   options_spending['xaxis']['categories'] = dados['categorias gerais']
@@ -100,8 +50,6 @@ selectMonth.addEventListener('change', () => {
   options_area['xaxis']['categories'] = dados[area]
   options_entries['series'] = dados['valor entradas']
   options_entries['labels'] = dados['entradas']
-
-  console.log(dados['saldoInicial'])
 
   saldoinicial.innerHTML = 'R$ ' + String((dados['saldoInicial']/1000).toFixed(2)).replace('.', ',') + " mil"
   saldofinal.innerHTML = 'R$ ' + String((dados['saldoFinal']/1000).toFixed(2)).replace('.', ',') + " mil"
@@ -119,7 +67,7 @@ var contracts_button = document.getElementById("button-contracts")
 var adm_button = document.getElementById("button-adm")
 var title_per_area = document.getElementById("title-per-area")
 
-
+//changes the area graph to list projetos 
 project_button.addEventListener('click', () => {
   cost_area = 'custos projetos'
   area = 'projetos'
@@ -134,6 +82,7 @@ project_button.addEventListener('click', () => {
   chart_areas.updateOptions(options_area)
 })
 
+//changes the area grpah to list zeladoria
 zelas_button.addEventListener('click', () => {
   cost_area = 'custos zeladoria'
   area = 'zeladoria'
@@ -146,6 +95,7 @@ zelas_button.addEventListener('click', () => {
   chart_areas.updateOptions(options_area)
 })
 
+//changes the area graph to list contratos
 contracts_button.addEventListener('click', () => {
   cost_area = 'custos contratos'
   area = 'contratos'
@@ -158,6 +108,7 @@ contracts_button.addEventListener('click', () => {
   chart_areas.updateOptions(options_area)
 })
 
+//changes the area graph to administração
 adm_button.addEventListener('click', () => {
   cost_area = 'custos adm'
   area = 'administracao'
@@ -172,6 +123,7 @@ adm_button.addEventListener('click', () => {
   chart_areas.updateOptions(options_area)
 })
 
+//defines the options for the general spendings graph
 var options_spending = {
   series: [{
       name: 'Gastos',
@@ -266,7 +218,7 @@ var options_spending = {
   };
 
 
-
+//defines the graphic options for the area spendings
   var options_area = {
     series: [{
         name: 'Gastos',
@@ -353,7 +305,7 @@ var options_spending = {
 
 
 
-
+//defines the graphic options for the entries piechart
 var options_entries = {
       series: dados['valor entradas'],
       chart: {
