@@ -34,13 +34,20 @@ for year in years:
 
         df_adm = df_adm[df_adm['cost'] != 0]
         df_entradas = df_entradas[df_entradas['cost'] != 0]
+        
+        df_zelas_categories = pd.DataFrame(columns=['description', 'cost'])
+        
+        for categoria in df_zeladoria['description'].drop_duplicates().to_list():
+            df_temp = pd.DataFrame([[categoria,df_zeladoria[df_zeladoria['description'] == categoria].sum()['cost']]], columns=['description','cost'])
+            df_zelas_categories = pd.concat([df_zelas_categories, df_temp], ignore_index=True, axis=0)
+            
 
         dictionary_temp[str(year)][month]["categorias gerais"] = df_saidas['description'].to_list()
         dictionary_temp[str(year)][month]['gastos gerais'] = df_saidas['cost'].to_list()
         dictionary_temp[str(year)][month]['projetos'] = df_projetos['description'].to_list()
         dictionary_temp[str(year)][month]['custos projetos'] = df_projetos['cost'].to_list()
-        dictionary_temp[str(year)][month]['zeladoria'] = df_zeladoria['description'].to_list()
-        dictionary_temp[str(year)][month]['custos zeladoria'] = df_zeladoria['cost'].to_list()
+        dictionary_temp[str(year)][month]['zeladoria'] = df_zelas_categories['description'].to_list()
+        dictionary_temp[str(year)][month]['custos zeladoria'] = df_zelas_categories['cost'].to_list()
         dictionary_temp[str(year)][month]['contratos'] = df_contratos['description'].to_list()
         dictionary_temp[str(year)][month]['custos contratos'] = df_contratos['cost'].to_list()
         dictionary_temp[str(year)][month]['administracao'] = df_adm['description'].to_list()
