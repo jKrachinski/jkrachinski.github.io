@@ -1,0 +1,21 @@
+{
+    "projetos": [
+        "projeto1",
+        "projeto2",
+        "projeto3"
+    ],
+    "gastosProjetos": [
+        20,
+        30,
+        40
+    ],
+    "contratos":3,
+    "gastosGerais": [
+        "projetos",
+        "zeladoria",
+        "contratos",
+        "administração",
+        "tarifas administrativas",
+        "taxas de cobrança"
+    ]
+}
