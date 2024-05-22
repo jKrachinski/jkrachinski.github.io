@@ -302,4 +302,35 @@ geral;2023;Novembro;11;Saldo Final;497575.76
 geral;2023;Dezembro;12;Saldo Final;483483.01
 geral;2024;Janeiro;1;Saldo Final;477782.64
 geral;2024;Fevereiro;2;Saldo Final;453450.18
-geral;2024;Março;3;Saldo Final;453761.85
+geral;2024;Março;3;Saldo Final;452821.89
+geral;2024;Abril;4;Saldo Inicial;452821.89
+geral;2024;Abril;4;Saldo Final;414582.24
+saida;2024;Abril;4;Projetos;31287.82
+saida;2024;Abril;4;Contratos;52024.25
+saida;2024;Abril;4;Zeladoria;7281.35
+saida;2024;Abril;4;Tarifas Administrativas;9340.00
+saida;2024;Abril;4;Tarifas Bancárias;273.12
+saida;2024;Abril;4;Taxas de Cobrança;677.3
+entrada;2024;Abril;4;Boletos IUGU;59934.97
+entrada;2024;Abril;4;Investimentos;2709.22
+projetos;2024;Abril;4;Banheiro do CASDvest;12992.19
+projetos;2024;Abril;4;Câmeras H8;365.00
+projetos;2024;Abril;4;Bebedouro Bloco H;1899.90
+projetos;2024;Abril;4;Reforma da Sala do Casd;11440.73
+projetos;2024;Abril;4;Tampas dos Bueiros;4590.00
+zeladoria;2024;Abril;4;Apartamentos;303
+zeladoria;2024;Abril;4;Áreas Externas;1915.60
+zeladoria;2024;Abril;4;Dedetização e desentupimento;675
+zeladoria;2024;Abril;4;Elétrica Geral;958.74
+zeladoria;2024;Abril;4;Halls;179.90
+zeladoria;2024;Abril;4;Hidráulica Geral;270.50
+zeladoria;2024;Abril;4;Material de Limpeza;1128.61
+zeladoria;2024;Abril;4;Piscina e Churrasqueira;631.50
+zeladoria;2024;Abril;4;Salas Comuns;1218.51
+adminstracao;2024;Abril;4;Funcionárias Executivas;7340.00
+adminstracao;2024;Abril;4;AEITA;2000.00
+contratos;2024;Abril;4;Manutenção e Limpeza da Piscina Mensal- Feijão;400.15
+contratos;2024;Abril;4;União Zeladoria - Zeladoria H8;42680.10
+contratos;2024;Abril;4;Copy Company - Locação Impressora;200
+contratos;2024;Abril;4;LavanderITA - Novo Contrato Anual;6344
+contratos;2024;Abril;4;Rede_;2400

@@ -63,6 +63,7 @@
         "grid";
         border-left: 0px solid #f8c300;
         border-top:  0px solid #f8c300;
+        padding-bottom: 40px;
         color: #fff;
     }
 
@@ -115,5 +116,37 @@
         border-radius: 10px;
         cursor: pointer;
         transition: 0.2s;
+    }
+
+    .grid-container-inadimplencia{
+        display: grid;
+        grid-template-rows: 3.5fr 3.5fr 3fr;
+        grid-template-columns: 1fr;
+        height: 500px;
+        margin-top: 300px;
+    }
+
+    .grid-container-inadimplencia .inadimplencia-p-turma{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        padding-bottom: 100px;
+    }
+
+    .grid-container-inadimplencia .inadimplencia-p-numero-de-boletos{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+
+    .grid-container-inadimplencia .numeros-inadimplencia{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1000px;
+        flex-direction: column;
+        font-size: 2.5vh;
     }
 }

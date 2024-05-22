@@ -1,4 +1,5 @@
 import database from '../database/database.json' with {type: "json"};
+import inadimplencia from '../database/inadimplencia.json' with {type: "json"}
 
 var dados = database['2024']['Janeiro']
 var selectMonth = document.getElementById("select-month")
@@ -10,6 +11,7 @@ var saldoinicial = document.getElementById("saldo-inicial")
 var saldofinal = document.getElementById("saldo-final")
 var entradastotal = document.getElementById("entradas-total")
 var saidastotal = document.getElementById("saidas-total")
+
 
 //whenever the user changes the listed year, changes the data to represent the first month of that year
 selectYear.addEventListener('change', () => {
@@ -339,10 +341,108 @@ var options_entries = {
     }]
 };
 
+//grafico do numero de inadimplentes por boleto
+var options_numero_boletos = {
+  series: [inadimplencia['n_devendo']['1-3'], inadimplencia['n_devendo']['4-6'], inadimplencia['n_devendo']['7-9'], inadimplencia['n_devendo']['10+']],
+  chart: {
+  width: 450,
+  type: 'pie',
+  },
+  title: {
+    text: "Quantidade de inadimplentes por numero de boletos não pagos",
+    align: 'center',
+    style: {
+      fontSize: '12px',
+      fontWeight: 'bold',
+      color: 'white'
+    }
+  },
+  legend: {
+    position: 'left',
+    verticalAlign:'center',
+    color: ['#fff'],
+    style: {
+      colors:['#fff'],
+    },
+    labels: {
+      colors:['#fff', '#fff', '#fff', '#fff', '#fff']
+    }
+  },
+  labels: ['1-3', '4-6', '7-9', '10+'],
+  responsive: [{
+    breakpoint: 1000,
+    options: {
+      chart: {
+        width: 300
+      },
+      legend: {
+        position: 'bottom',
+        styel: {
+          color:'#fff',
+        }
+      },
+      title: {
+        style: {
+          fontSize: "9px",
+        },
+      },
+    }
+  }]
+};
+
+//grafico de boletos por turma
+var options_inadimplencia_turma = {
+  series: Object.values(inadimplencia['turmas']),
+  chart: {
+  width: 450,
+  type: 'pie',
+  },
+  title: {
+    text: "Boletos não pagos por turma",
+    align: 'center',
+    style: {
+      fontSize: '12px',
+      fontWeight: 'bold',
+      color: 'white'
+    }
+  },
+  legend: {
+    position: 'left',
+    color: ['#fff'],
+    style: {
+      colors:['#fff'],
+    },
+    labels: {
+      colors:['#fff', '#fff', '#fff', '#fff', '#fff', '#fff']
+    }
+  },
+  labels: Object.keys(inadimplencia['turmas']),
+  responsive: [{
+    breakpoint: 1000,
+    options: {
+      chart: {
+        width: 300
+      },
+      legend: {
+        position: 'bottom',
+        styel: {
+          color:'#fff',
+        }
+      }
+    }
+  }]
+};
+
+
 
 var chart_entries = new ApexCharts(document.querySelector("#entries-pie-chart"), options_entries);
 chart_entries.render();
 
+var chart_numero_boletos = new ApexCharts(document.querySelector("#pie-chart-numero-boletos"), options_numero_boletos);
+chart_numero_boletos.render();
+
+var chart_turma = new ApexCharts(document.querySelector("#pie-chart-p-turma"), options_inadimplencia_turma);
+chart_turma.render();
 
 var chart_areas = new ApexCharts(document.querySelector("#column-chart-area"), options_area);
 chart_areas.render()

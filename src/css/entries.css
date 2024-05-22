@@ -6,6 +6,7 @@
     grid-template-rows: 1fr 9fr;
     grid-template-areas: "title"
     "gains-graph";
+    border-bottom: 3px solid #f8c300;
 }
 
 

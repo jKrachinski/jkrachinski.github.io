@@ -24,6 +24,7 @@
         <link rel="stylesheet" href="./src/css/entries.css">
         <link rel="stylesheet" href="./src/css/spendings-per-area.css">
         <link rel="stylesheet" href="./src/css/responsive.css">
+        <link rel="stylesheet" href="./src/css/inadimplencia.css">
 
     </head>
     <body>
@@ -104,9 +105,28 @@
             </div>
         </div>
 
+        <div class="grid-container-inadimplencia">
+            <div class="inadimplencia-p-numero-de-boletos">
+                <div id="pie-chart-numero-boletos"></div>
+            </div>
+            <div class="inadimplencia-p-turma">
+                <div id="pie-chart-p-turma"></div>
+            </div>
+            <div class="numeros-inadimplencia">
+                <p>O Déficit atual de boletos está em</p>
+                <p class="inadimplencia-real" id="inadimplencia-real">Valor de inadimplencia</p>
+                <p>Com esse dinheiro é possível realizar: </p>
+                <p class="inadimplencia-gaga8" id="inadimplencia-gaga8">A construção de X gaga8</p>
+                <p class="inadimplencia-evtol" id="inadimplencia-evtol">A reforma de X salas da EVTOL</p>
+                <p class="inadimplencia-copinha" id="inadimplencia-copinha">A construção de X copinhas</p>
+                <p class="inadimplencia-CASD" id="inadimplencia-CASD">A reforma de X banheiros do CASD</p>
+            </div>
+        </div>
+
 
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.49.0/apexcharts.min.js"></script>
+        <script type="module" src="./src/js/inadimplencia.js"></script>
         <script type="module" src="./src/js/select.js"></script>
 
         <script type="module" src="./src/js/charts.js"></script>
