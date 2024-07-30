@@ -2,7 +2,7 @@ import gspread
 import pandas as pd
 import json
 
-sa = gspread.service_account(filename='service_account.json')
+sa = gspread.service_account(filename='service_account_new.json')
 
 ssBaseDeDados = sa.open("Python Controle Mensalidade - Base de dados(Testes)")
 
