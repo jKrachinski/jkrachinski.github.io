@@ -57,6 +57,7 @@ for year in years:
 
         total_entradas = sum(dictionary_temp[str(year)][month]['valor entradas'])
         total_saidas = sum(dictionary_temp[str(year)][month]['gastos gerais'])
+        print(df_month)
         saldo_inicial = df_month[df_month['description'] == 'Saldo Inicial']['cost'].to_list()[0]
         saldo_final = df_month[df_month['description'] == 'Saldo Final']['cost'].to_list()[0]
 
