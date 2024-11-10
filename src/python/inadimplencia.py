@@ -11,7 +11,7 @@ base = ssBaseDeDados.worksheet("H8")
 
 df = pd.DataFrame(base.get_all_values()[1:], columns=base.get_all_values()[0])
 
-meses_120=["SETEMBRO 2024", "AGOSTO 2024","JULHO 2024","JUNHO 2022", "MAIO 2024", "ABRIL 2024", "MARÇO 2024", "FEVEREIRO 2024", "JANEIRO 2024", "DEZEMBRO 2023", "NOVEMBRO 2023", "OUTUBRO 2023", "SETEMBRO 2023", "AGOSTO 2023", "JULHO 2023", "JUNHO 2023", "MAIO 2023", "ABRIL 2023", "MARÇO 2023", "FEVEREIRO 2023", "JANEIRO 2023", "DEZEMBRO 2022", "NOVEMBRO 2022", "OUTUBRO 2022", "SETEMBRO 2022", "AGOSTO 2022", "JULHO 2022"]
+meses_120=["OUTUBRO 2024", "SETEMBRO 2024", "AGOSTO 2024","JULHO 2024","JUNHO 2022", "MAIO 2024", "ABRIL 2024", "MARÇO 2024", "FEVEREIRO 2024", "JANEIRO 2024", "DEZEMBRO 2023", "NOVEMBRO 2023", "OUTUBRO 2023", "SETEMBRO 2023", "AGOSTO 2023", "JULHO 2023", "JUNHO 2023", "MAIO 2023", "ABRIL 2023", "MARÇO 2023", "FEVEREIRO 2023", "JANEIRO 2023", "DEZEMBRO 2022", "NOVEMBRO 2022", "OUTUBRO 2022", "SETEMBRO 2022", "AGOSTO 2022", "JULHO 2022"]
 
 meses_53 = ["OUTUBRO 2021", "SETEMBRO 2021", "AGOSTO 2021", "JULHO 2021", "JUNHO 2021", "MAIO 2021", "ABRIL 2021", "MARÇO 2021", "FEVEREIRO 2021", "JANEIRO 2021", "DEZEMBRO 2020", "NOVEMBRO 2020", "OUTUBRO 2020", "JULHO 2020", "JUNHO 2020", "MAIO 2020", "ABRIL 2020"]
 
@@ -36,7 +36,7 @@ df = df[df['ALUNO'] != '']
 
 for index, row in enumerate(df['TURMA'].to_list()):
     for indexc, col in enumerate(df.iloc[index].to_list()):
-        if(str(col).upper() == 'NÃO PAGO'):
+        if(str(col).upper() == 'NÃO PAGO' and df.columns[indexc-2] != "OUTUBRO 2024"):
             mes = df.columns[indexc-2]
             if mes in meses_120:
                 boletos_120+=1
